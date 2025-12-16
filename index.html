@@ -41,14 +41,39 @@ header a:hover { text-decoration: underline; }
     font-size: clamp(4rem, 8vw, 7rem);
     font-weight: 900;
     letter-spacing: 6px;
-    background: linear-gradient(45deg, #ff9900, #ff3300);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow:
-        4px 4px 0 #000,
-        7px 7px 0 #222,
-        10px 10px 0 #000;
+    color: #ff6600;
+    text-transform: uppercase;
     transform: rotate(-4deg);
+
+    text-shadow:
+        2px 2px 0 #000,
+        4px 4px 0 #111,
+        6px 6px 0 #000,
+        0 0 10px rgba(255,102,0,0.9),
+        0 0 20px rgba(255,102,0,0.7),
+        0 0 35px rgba(255,80,0,0.6),
+        0 0 50px rgba(255,50,0,0.4);
+
+    animation: pulseGlow 2.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from {
+        text-shadow:
+            2px 2px 0 #000,
+            4px 4px 0 #111,
+            6px 6px 0 #000,
+            0 0 15px rgba(255,102,0,0.7),
+            0 0 30px rgba(255,102,0,0.5);
+    }
+    to {
+        text-shadow:
+            2px 2px 0 #000,
+            4px 4px 0 #111,
+            6px 6px 0 #000,
+            0 0 30px rgba(255,102,0,1),
+            0 0 60px rgba(255,80,0,0.9);
+    }
 }
 
 .hero p {
@@ -56,6 +81,7 @@ header a:hover { text-decoration: underline; }
     font-size: 1.2rem;
 }
 
+/* BUTTONS */
 .btn {
     display: inline-block;
     margin: 25px 10px;
@@ -89,4 +115,166 @@ h2 {
 }
 
 /* SERVICES */
-.service
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #111;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.service h3 {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+/* CONTACT */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact input,
+#contact textarea {
+    padding: 12px;
+    background: #111;
+    border: 1px solid #ff6600;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#contact button {
+    background: #ff6600;
+    color: #000;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background: #e65c00;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    color: #ff6600;
+}
+
+footer a {
+    color: #ff6600;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#services">Services</a>
+    <a href="#area">Service Area</a>
+    <a href="#schedule">Book</a>
+    <a href="#contact">Contact</a>
+</header>
+
+<div class="hero">
+    <div class="monster-text">VOLT</div>
+    <p>Residential Electrical • Licensed & Insured</p>
+    <a href="#schedule" class="btn btn-primary">Free Quote</a>
+    <a href="#schedule" class="btn btn-secondary">Book Service</a>
+</div>
+
+<section id="services">
+<h2>Residential Electrical Services</h2>
+<div class="services">
+
+<div class="service">
+<h3>New Construction</h3>
+<p>Complete residential wiring including service panels, circuits, outlets, switches, and lighting.</p>
+</div>
+
+<div class="service">
+<h3>Panel Changes & Breakers</h3>
+<p>Main panel upgrades, sub-panels, breaker replacements, surge protection, and safety upgrades.</p>
+</div>
+
+<div class="service">
+<h3>Lighting & Fixtures</h3>
+<p>Recessed lighting, chandeliers, ceiling fans, outdoor and landscape lighting.</p>
+</div>
+
+<div class="service">
+<h3>Switches & Outlets</h3>
+<p>GFCI outlets, USB outlets, dimmers, smart switches, troubleshooting and repairs.</p>
+</div>
+
+<div class="service">
+<h3>Electrical Repairs</h3>
+<p>Flickering lights, power loss, wiring issues, diagnostics, and service calls.</p>
+</div>
+
+<div class="service">
+<h3>Pool & Outdoor Electrical</h3>
+<p>Pool pumps, outdoor receptacles, landscape lighting, weather-rated installations.</p>
+</div>
+
+</div>
+</section>
+
+<section id="area">
+<h2>Service Area</h2>
+<p style="text-align:center;">
+Indian Land, Fort Mill, Rock Hill, Lake Wylie, Waxhaw, Charlotte, and surrounding areas within 50 miles.
+</p>
+</section>
+
+<section id="schedule">
+<h2>Schedule Service</h2>
+<div style="text-align:center;">
+<p><strong>Free Quotes Available</strong></p>
+<a href="https://square.link/u/qJ8R8h6N?type=free-quote" class="btn btn-primary">Book Free Quote</a>
+
+<p style="margin-top:30px;">
+$69 Initial Visit (Paid Online)<br>
+$120/hour after arrival + materials
+</p>
+
+<a href="https://square.link/u/qJ8R8h6N" class="btn btn-secondary">Book Paid Visit</a>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact VOLT</h2>
+
+<form action="mailto:voltelectrical@icloud.com" method="post" enctype="text/plain">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="text" name="phone" placeholder="Your Phone">
+<textarea name="message" rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+<p style="text-align:center; margin-top:15px;">
+Call or Text: <a href="tel:+17042078139">704-207-8139</a>
+</p>
+</section>
+
+<footer>
+© 2025 VOLT • Indian Land, SC • 
+<a href="mailto:voltelectrical@icloud.com">voltelectrical@icloud.com</a>
+</footer>
+
+</body>
+</html>
