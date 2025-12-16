@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt LLC - Electrical Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #1a73e8, #3f87ff);
+            color: white;
+            padding: 25px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        header p {
+            margin: 5px 0 0 0;
+        }
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 50px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a73e8;
+        }
+        .pricing {
+            background-color: #e0f0ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #155ab6;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        img.service-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        #map {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Volt LLC</h1>
+        <p>Licensed, Bonded & Insured in NC & SC</p>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#appointment">Book Appointment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Residential electrical work including service calls, repairs, and new home installations.</p>
+            <img class="service-img" src="https://via.placeholder.com/800x400?text=Electrical+Work" alt="Electrical Services">
+            <div class="pricing">
+                <p><strong>Trip Charge:</strong> $69</p>
+                <p><strong>Hourly Rate:</strong> $120/hr</p>
+            </div>
+        </section>
+
+        <section id="appointment">
+            <h2>Book an Appointment</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="" disabled selected>Select Service</option>
+                    <option>Service Call</option>
+                    <option>Repair</option>
+                    <option>New Home Installation</option>
+                </select>
+                <textarea placeholder="Additional Details" rows="4"></textarea>
+                <button type="submit">Submit Appointment Request</button>
+            </form>
+            <p>Note: We will confirm your appointment before finalizing the booking.</p>
+        </section>
+
+        <section id="service-area">
+            <h2>Service Area</h2>
+            <p>We proudly serve the following areas:</p>
+            <ul>
+                <li>Indian Land, SC</li>
+                <li>Charlotte, NC</li>
+                <li>Fort Mill, SC</li>
+                <li>Lancaster, SC</li>
+                <li>Indian Trail, NC</li>
+                <li>Ballantyne, NC</li>
+                <li>Concord, NC</li>
+                <li>Monroe, NC</li>
+                <li>Clover, SC</li>
+            </ul>
+            <div id="map"></div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:voltelectrical@icloud.com">voltelectrical@icloud.com</a></p>
+            <p>Phone: <a href="tel:7042078139">704-207-8139</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Volt LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function initMap() {
+            const center = { lat: 35.2, lng: -80.8 }; // central point near Charlotte, NC
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: center,
+            });
+            const areas = [
+                {lat: 35.01, lng: -80.88, title: "Charlotte, NC"},
+                {lat: 35.01, lng: -80.85, title: "Ballantyne, NC"},
+                {lat: 35.12, lng: -80.71, title: "Concord, NC"},
+                {lat: 35.05, lng: -80.63, title: "Monroe, NC"},
+                {lat: 35.02, lng: -80.78, title: "Indian Trail, NC"},
+                {lat: 35.00, lng: -80.98, title: "Lancaster, SC"},
+                {lat: 35.00, lng: -81.0, title: "Fort Mill, SC"},
+                {lat: 34.98, lng: -81.03, title: "Indian Land, SC"},
+                {lat: 35.05, lng: -81.05, title: "Clover, SC"}
+            ];
+            areas.forEach(area => {
+                new google.maps.Marker({
+                    position: {lat: area.lat, lng: area.lng},
+                    map: map,
+                    title: area.title
+                });
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
